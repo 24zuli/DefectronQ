@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className="bg-gray-900 border-t border-gray-800">
       <div className="container mx-auto px-4 py-12">
         {/* Grid layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-center md:text-left">
           {/* Left section */}
           <div className="order-2 md:order-1">
             <h3 className="text-xl font-bold mb-4 text-gradient">DefectronQ</h3>
@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Center Navigation section */}
+          {/* Center Navigation section
           <div className="order-1 md:order-2">
             <h3 className="text-lg font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
@@ -71,10 +71,10 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Right section */}
-          <div className="order-3 md:order-3">
+          <div className="order-2 md:order-2">
             <h3 className="text-lg font-semibold mb-4">Acknowledgments</h3>
             <ul className="space-y-2 text-gray-400">
               <li>MVTec AD Dataset</li>
