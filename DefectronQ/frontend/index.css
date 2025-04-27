@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-gray-100;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .btn-3d {
+    @apply relative px-6 py-3 font-semibold text-white rounded-lg transform transition-all duration-300 
+    bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700
+    active:scale-95 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-3d:before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full rounded-lg opacity-0 
+    transition-opacity duration-300 bg-gradient-to-r from-blue-600 to-indigo-700;
+  }
+
+  .btn-3d:hover:before {
+    @apply opacity-100;
+  }
+
+  .card {
+    @apply bg-gray-800 rounded-xl shadow-md overflow-hidden p-6 hover:shadow-lg transition-all duration-300;
+  }
+
+  .glow-border {
+    @apply border border-transparent;
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.5), 0 0 20px rgba(96, 165, 250, 0.3) inset;
+  }
+
+  .nav-link {
+    @apply text-gray-300 hover:text-white transition-colors duration-300 relative;
+  }
+
+  .nav-link:after {
+    @apply content-[''] absolute w-0 h-0.5 bg-blue-500 bottom-0 left-0 transition-all duration-300;
+  }
+
+  .nav-link:hover:after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    @apply text-blue-400;
+  }
+
+  .nav-link.active:after {
+    @apply w-full;
+  }
+}
