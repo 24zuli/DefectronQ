@@ -6,7 +6,6 @@ import React from "react";
 import zuliImg from "../assets/zuli.jpeg";
 import ishitaImg from "../assets/ishita.jpeg";
 
-
 interface TeamMember {
   id: number;
   name: string;
@@ -30,9 +29,9 @@ const Team = () => {
       bio: "Quantum computing expert specializing in hybrid quantum-classical architectures for computer vision applications.",
       image: zuliImg, // 🟢 Constant local image
       links: {
-        github: "https://github.com",
-        linkedin: "https://linkedin.com",
-        email: "mailto:ishita@defectronq.com",
+        github: "https://github.com/24zuli",
+        linkedin: "https://www.linkedin.com/in/zuli-dobariya-615a6a250",
+        email: "mailto:zulidobariya24@gmail.com",
       },
     },
     {
@@ -43,8 +42,8 @@ const Team = () => {
       image: ishitaImg, // 🟢 Constant local image
       links: {
         github: "https://github.com",
-        linkedin: "https://linkedin.com",
-        email: "mailto:zuli@defectronq.com",
+        linkedin: "https://www.linkedin.com/in/ishitabhojani",
+        email: "mailto:ishitabhojani2810@gmail.com",
       },
     },
   ]);
@@ -55,7 +54,7 @@ const Team = () => {
         <div className="container mx-auto px-4 py-20">
           <SectionTitle
             title="Meet The Team"
-            subtitle="The minds behind DefectronQ's quantum-enhanced anomaly detection technology."
+            // subtitle="The minds behind DefectronQ's quantum-enhanced anomaly detection technology."
             centered
           />
 
