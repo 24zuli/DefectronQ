@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useRef } from 'react';
 
 interface AnimatedTitleProps {
@@ -14,7 +15,7 @@ const AnimatedTitle = ({ text, subtitle, className = '' }: AnimatedTitleProps) =
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('opacity-100');
-          entry.target.classList.remove('translate-y-10', 'opacity-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-4');
           observer.unobserve(entry.target);
         }
       },
@@ -37,7 +38,7 @@ const AnimatedTitle = ({ text, subtitle, className = '' }: AnimatedTitleProps) =
   return (
     <div 
       ref={titleRef} 
-      className={`transition-all duration-1000 ease-out transform translate-y-10 opacity-0 ${className}`}
+      className={`transition-all duration-1000 ease-out transform opacity-0 translate-y-4 ${className}`}
     >
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight glow-text">{text}</h1>
       {subtitle && (

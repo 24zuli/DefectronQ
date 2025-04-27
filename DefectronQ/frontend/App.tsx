@@ -8,6 +8,7 @@ import Results from './pages/Results';
 import LiveDemo from './pages/LiveDemo';
 import Team from './pages/Team';
 import './App.css';
+import React from 'react';
 
 function App() {
   const [darkMode] = useState(true);
@@ -16,7 +17,7 @@ function App() {
     <Router>
       <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-100 text-gray-900'}`}>
         <Navbar />
-        <main className="pb-20">
+        <main className="pt-20 pb-20">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/explore" element={<ExploreModel />} />

@@ -3,6 +3,7 @@ import SectionTitle from '../components/SectionTitle';
 import ParallaxSection from '../components/ParallaxSection';
 import Card3D from '../components/Card3D';
 import { Brain, ArrowRight, LayoutGrid, Code2, Activity } from 'lucide-react';
+import React from 'react';
 
 const ExploreModel = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);

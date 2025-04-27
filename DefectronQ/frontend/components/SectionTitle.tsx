@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useRef } from 'react';
 
 interface SectionTitleProps {
@@ -20,7 +21,7 @@ const SectionTitle = ({
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('opacity-100');
-          entry.target.classList.remove('translate-y-10', 'opacity-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-4');
           observer.unobserve(entry.target);
         }
       },
@@ -43,17 +44,15 @@ const SectionTitle = ({
   return (
     <div 
       ref={titleRef}
-      className={`
-        transition-all duration-700 ease-out transform translate-y-10 opacity-0
-        mb-12 ${centered ? 'text-center' : ''} ${className}
-      `}
+      className={`transition-all duration-700 ease-out transform translate-y-4 opacity-0
+      ${centered ? 'text-center' : ''} ${className}`}
     >
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+      <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white">
         {title}
-        <span className="block w-20 h-1 bg-blue-500 mt-2 rounded-full"></span>
+        {/* <span className="block w-20 h-1 bg-blue-500 mt-2 rounded-full"></span> */}
       </h2>
       {subtitle && (
-        <p className="text-lg text-gray-300 max-w-3xl mt-4">
+        <p className="text-lg text-gray-300 max-w-3xl mt-2">
           {subtitle}
         </p>
       )}

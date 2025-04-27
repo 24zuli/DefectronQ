@@ -1,3 +1,4 @@
+import React from 'react';
 import { ReactNode, useRef, useState } from 'react';
 
 interface Card3DProps {
