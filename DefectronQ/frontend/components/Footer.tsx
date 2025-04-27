@@ -88,7 +88,7 @@ const Footer = () => {
         {/* Bottom footer */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500">
-            © {new Date().getFullYear()} Quantum-Enhanced Anomaly Detection. All rights reserved.
+            © {new Date().getFullYear()} DefectronQ. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0">
             <button
