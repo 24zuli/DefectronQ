@@ -398,8 +398,8 @@ const LiveDemo = () => {
   };
 
   return (
-    <div className="pt-20">
-      <section className="hero-gradient min-h-[50vh] flex items-center">
+    <div className="pt-18 pg-20 bg-gray-900">
+      <section className="hero-gradient min-h-[25vh] flex items-center">
         <div className="container mx-auto px-4 py-20">
           <SectionTitle
             title="Live Anomaly Detection Demo"

@@ -49,7 +49,7 @@ const Team = () => {
   ]);
 
   return (
-    <div className="pt-20">
+    <div className="pt-18 pg-20 bg-gray-900">
       <section className="hero-gradient min-h-[50vh] flex items-center">
         <div className="container mx-auto px-4 py-20">
           <SectionTitle
@@ -137,7 +137,7 @@ const Team = () => {
               </p>
 
               <a
-                href="mailto:contact@defectronq.com"
+                href="mailto:defectronq@gmail.com"
                 className="btn-3d inline-block px-8 py-4 font-semibold text-white rounded-lg transition-all duration-300 
                 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700"
               >
