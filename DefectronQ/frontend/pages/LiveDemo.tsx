@@ -293,6 +293,7 @@ import SectionTitle from "../components/SectionTitle";
 import Button3D from "../components/Button3D";
 import Card3D from "../components/Card3D";
 import { Upload, CheckCircle, XCircle, RefreshCw, Image } from "lucide-react";
+import React from "react";
 
 const CLASSES = [
   "bottle",
@@ -525,7 +526,7 @@ const LiveDemo = () => {
                           </span>
                         </div>
 
-                        <div className="mt-4">
+                        {/* <div className="mt-4">
                           <p className="text-gray-300 mb-2">Anomaly Score</p>
                           <div className="w-full bg-gray-700 rounded-full h-4">
                             <div
@@ -538,11 +539,11 @@ const LiveDemo = () => {
                             ></div>
                           </div>
                           <div className="flex justify-between mt-1 text-sm text-gray-400">
-                            <span>0.0</span>
-                            <span>0.5</span>
                             <span>1.0</span>
+                            <span>1.5</span>
+                            <span>2.0</span>
                           </div>
-                        </div>
+                        </div> */}
 
                         <p className="mt-4 text-sm text-gray-300">
                           {result === "anomaly"
