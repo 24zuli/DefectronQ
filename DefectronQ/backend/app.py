@@ -56,11 +56,12 @@
 # backend/app.py
 from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
-from models import load_models
-from utils import predict_anomaly, idx_to_class
+from .models import load_models
+from .utils import predict_anomaly, idx_to_class
 from PIL import Image
 import requests
 import io
+import os
 
 # ------------------------
 # Flask App Setup
@@ -71,7 +72,14 @@ CORS(app)
 # ------------------------
 # Load Models Once at Startup
 # ------------------------
-encoder, generator = load_models("models/encoder.pth", "models/generator.pth", num_classes=len(idx_to_class))
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+encoder, generator = load_models(
+    os.path.join(BASE_DIR, "encoder.pth"),
+    os.path.join(BASE_DIR, "generator.pth"),
+    num_classes=len(idx_to_class)
+)
 
 # ------------------------
 # Example Image Endpoint (Fetch from Google Drive)
