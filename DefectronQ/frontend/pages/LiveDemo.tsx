@@ -337,7 +337,7 @@ const LiveDemo = () => {
   };
 
   const handleUseExample = async () => {
-    const exampleImageUrl = "http://localhost:5000/example-image";
+    const exampleImageUrl = "https://defectronq.onrender.com/example-image";
     setPreviewUrl(exampleImageUrl);
     setSelectedClass("bottle"); // Example defaults to bottle
     setStep("processing");
@@ -360,7 +360,7 @@ const LiveDemo = () => {
     formData.append("class_name", className);
 
     try {
-      const response = await fetch("http://localhost:5000/predict", {
+      const response = await fetch("https://defectronq.onrender.com/predict", {
         method: "POST",
         body: formData,
       });
@@ -622,3 +622,4 @@ const LiveDemo = () => {
 };
 
 export default LiveDemo;
+
