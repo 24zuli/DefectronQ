@@ -62,11 +62,14 @@ from PIL import Image
 import requests
 import io
 
+# ------------------------
+# Flask App Setup
+# ------------------------
 app = Flask(__name__)
 CORS(app)
 
 # ------------------------
-# Load Models
+# Load Models Once at Startup
 # ------------------------
 encoder, generator = load_models("models/encoder.pth", "models/generator.pth", num_classes=len(idx_to_class))
 
@@ -75,16 +78,13 @@ encoder, generator = load_models("models/encoder.pth", "models/generator.pth", n
 # ------------------------
 @app.route('/example-image')
 def example_image():
-    # Google Drive file ID from your shared link
     drive_file_id = "1HGKlmKbZJ6dY2zNib6sV9-TgSlIn_am4"
     drive_link = f"https://drive.google.com/uc?export=download&id={drive_file_id}"
 
     try:
         response = requests.get(drive_link)
-        response.raise_for_status()  # Raise error if the request failed
-
+        response.raise_for_status()
         return Response(response.content, content_type="image/png")
-
     except requests.RequestException as e:
         return jsonify({"error": f"Unable to fetch image: {str(e)}"}), 500
 
@@ -100,15 +100,11 @@ def predict():
     class_name = request.form['class_name']
 
     try:
-        # Read and preprocess the uploaded image
         image = Image.open(file.stream).convert('RGB')
-
-        # Call predict_anomaly (which returns images too)
         score, threshold, prediction, recon_base64, anomaly_map_base64 = predict_anomaly(
             encoder, generator, image, class_name
         )
 
-        # Return result to frontend
         return jsonify({
             "score": score,
             "threshold": threshold,
@@ -121,7 +117,15 @@ def predict():
         return jsonify({"error": str(e)}), 500
 
 # ------------------------
-# WSGI Entry Point (NO debug=True here for production)
+# Global Error Handler (CORS-safe)
 # ------------------------
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+@app.errorhandler(Exception)
+def handle_exception(e):
+    response = jsonify({"error": str(e)})
+    response.status_code = 500
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    return response
+
+# ------------------------
+# No app.run() here! Use Gunicorn or similar WSGI server.
+# ------------------------
